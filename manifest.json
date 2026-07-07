@@ -1,0 +1,10 @@
+{
+  "id": "moltn-sync",
+  "name": "Moltn Sync",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Pulls finished notes from your Moltn install into this vault, and (optionally) shares chosen notes back as context. Your files stay yours.",
+  "author": "Second Brain AB",
+  "authorUrl": "https://moltn.se",
+  "isDesktopOnly": false
+}

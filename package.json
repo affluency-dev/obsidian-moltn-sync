@@ -1,0 +1,18 @@
+{
+  "name": "moltn-sync",
+  "version": "0.1.0",
+  "description": "Sync Moltn notes into your Obsidian vault (pull), and share chosen notes back as context.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production"
+  },
+  "keywords": ["obsidian", "moltn"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20",
+    "esbuild": "^0.21.5",
+    "obsidian": "latest",
+    "typescript": "^5.4.0"
+  }
+}
