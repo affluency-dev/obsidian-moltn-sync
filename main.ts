@@ -98,7 +98,8 @@ export default class MoltnSyncPlugin extends Plugin {
         if (interactive) new Notice(`Moltn: fel ${res.status} vid hämtning.`);
         return;
       }
-      const items: PendingItem[] = res.json?.items ?? [];
+      const json = res.json as { items?: PendingItem[] } | undefined;
+      const items: PendingItem[] = json?.items ?? [];
       if (items.length === 0) {
         if (interactive) new Notice("Moltn: inga nya anteckningar.");
         return;
@@ -201,7 +202,8 @@ export default class MoltnSyncPlugin extends Plugin {
   }
 
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    const data = (await this.loadData()) as Partial<MoltnSettings> | null;
+    this.settings = Object.assign({}, DEFAULT_SETTINGS, data);
   }
   async saveSettings() {
     await this.saveData(this.settings);
@@ -216,10 +218,10 @@ class MoltnSettingTab extends PluginSettingTab {
   display(): void {
     const { containerEl } = this;
     containerEl.empty();
-    containerEl.createEl("h2", { text: "Moltn Sync" });
-    containerEl.createEl("p", {
-      text: "Hämta färdiga anteckningar från din Moltn-install in i det här valvet. Dina filer stannar hos dig.",
-    });
+    new Setting(containerEl)
+      .setName("Moltn Sync")
+      .setDesc("Hämta färdiga anteckningar från din Moltn-install in i det här valvet. Dina filer stannar hos dig.")
+      .setHeading();
 
     new Setting(containerEl)
       .setName("Moltn install-URL")

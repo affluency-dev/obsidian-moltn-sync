@@ -1,6 +1,6 @@
 {
   "name": "moltn-sync",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sync Moltn notes into your Obsidian vault (pull), and share chosen notes back as context.",
   "main": "main.js",
   "scripts": {
