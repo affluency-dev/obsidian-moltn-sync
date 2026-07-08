@@ -218,10 +218,9 @@ class MoltnSettingTab extends PluginSettingTab {
   display(): void {
     const { containerEl } = this;
     containerEl.empty();
-    new Setting(containerEl)
-      .setName("Moltn Sync")
-      .setDesc("Hämta färdiga anteckningar från din Moltn-install in i det här valvet. Dina filer stannar hos dig.")
-      .setHeading();
+    containerEl.createEl("p", {
+      text: "Hämta färdiga anteckningar från din Moltn-install in i det här valvet. Dina filer stannar hos dig.",
+    });
 
     new Setting(containerEl)
       .setName("Moltn install-URL")

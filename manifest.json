@@ -1,10 +1,10 @@
 {
   "id": "moltn-sync",
   "name": "Moltn Sync",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minAppVersion": "1.4.0",
   "description": "Pulls finished notes from your Moltn install into this vault, and (optionally) shares chosen notes back as context. Your files stay yours.",
   "author": "Second Brain AB",
-  "authorUrl": "https://github.com/affluency-dev/obsidian-moltn-sync",
+  "authorUrl": "https://github.com/affluency-dev",
   "isDesktopOnly": false
 }
